@@ -14,9 +14,6 @@ export default function Home() {
     socket.on("connect", () => {
       console.log("Connected to the socket.io server");
       setIsConnected(true);
-      setTimeout(() => {
-        socket.emit("message", "Hi");
-      }, 3000); // 三秒钟后发送
 
       socket.on("message", (messages) => {
         setMessages((prevMessages) => {
